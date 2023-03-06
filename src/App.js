@@ -1,15 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './componentes/Home/Home';
+import Navbar from './componentes/Navbar/Navbar';
+import Footer from './componentes/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <div>
-        <h1 className="text-3xl font-bold underline">
-          Hello world!
-        </h1>
-        <button class="btn btn-link">Button</button>
-      </div>
+      <Navbar />
+      <Home />
+      <Footer />
     </div>
   );
 }
