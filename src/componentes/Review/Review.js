@@ -5,16 +5,13 @@ const Review = () => {
         <div>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <div className="avatar">
+                    <div className="avatar mt-3">
                         <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYAc-AChkaLET2xGawQ2x7Fzl0JKSKFPO7Bw&usqp=CAU" />
                         </div>
+                    <h2 className="font-semibold text-xl pl-10 mt-16">Jhons Hatson</h2>
                     </div>
-                    <h2 className="card-title">Card title!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
-                    </div>
+                    <p className='mt-5 text-start'>If a dog chews shoes whose shoes does he choose?</p>
                 </div>
             </div>
         </div>
