@@ -5,11 +5,11 @@ const Navbar = () => {
         <div>
             <div className="navbar bg-blue-400">
                 <div className="flex-1">
-                    <a className="btn btn-ghost normal-case text-xl">dEsI~vIBeS</a>
+                    <a href='/' className="btn btn-ghost normal-case text-xl">dEsI~vIBeS</a>
                 </div>
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
+                        <li><a href='login'>Log In</a></li>
                         <li tabIndex="0">
                             <a>
                                 Parent
@@ -20,7 +20,7 @@ const Navbar = () => {
                                 <li><a>Submenu 2</a></li>
                             </ul>
                         </li>
-                        <li><a>Item 3</a></li>
+                        <li><a href='singup'>sing up</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "name":"Green Hoodie",
+        "price":200,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-nhN3GMBhvDdlu56kR6xki_OtwoTULUNpwA&usqp=CAU"
+    },
+    {
+        "id":2,
+        "name":"Green Hoodie",
+        "price":200,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl3afTOGf5GYmiVWM3pEftecV0tNbII6v5yA&usqp=CAU"
+    },
+    {
+        "id":3,
+        "name":"Green Hoodie",
+        "price":200,
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQHa-DG4bFT-NwxX5mlKn55SdA3Uzck_UoFA&usqp=CAU"
+    }
+]

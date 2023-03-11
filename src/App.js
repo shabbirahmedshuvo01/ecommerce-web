@@ -15,9 +15,15 @@ function App() {
     },
 
     {
+      path: "login",
+      element: <Login />
+    },
+    
+    {
       path: "singup",
       element: <Singup />
     }
+
 
   ])
 
