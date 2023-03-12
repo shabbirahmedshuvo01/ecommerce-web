@@ -18,7 +18,7 @@ function App() {
       path: "login",
       element: <Login />
     },
-    
+
     {
       path: "singup",
       element: <Singup />
@@ -31,7 +31,6 @@ function App() {
     <div className="App">
       <Navbar />
       <RouterProvider router={router}></RouterProvider>
-      {/* <Home /> */}
       <Footer />
     </div>
   );

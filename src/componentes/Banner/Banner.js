@@ -10,7 +10,7 @@ const Banner = () => {
                     <h2 className='text-6xl font-bold'>Box Office News!</h2>
                     <p className='text-xl w-96 text-start mt-5'>Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
 
-                    <button className='btn rounded-full btn btn-outline btn-warning mt-6'>Learn More </button>
+                    <button className='btn rounded-full btn-outline btn-warning mt-6'>Learn More </button>
                 </div>
                 <div>
                     <img className='w-96 rounded-lg shadow-2xl' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyNy42mVdJl0SK-KGeBZDyRyER8fp5fSUz_g&usqp=CAU" alt="" />
