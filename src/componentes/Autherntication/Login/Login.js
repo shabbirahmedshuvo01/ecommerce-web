@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
@@ -8,22 +8,26 @@ const Login = () => {
     const passwordRef = useRef('');
 
 
-    const [signIn] = useContext(AuthContext)
+
+    const { signInUser } = useContext(AuthContext);
+    const [logInError, setLogInError] = useState('');
 
 
     const handleLogin = () => {
+        setLogInError('');
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
         console.log(email, password, "hi baby");
 
-        signIn(email, password)
+        signInUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user)
             })
             .catch(error => {
-                console.log(error)
+                console.log(error.message)
+                setLogInError(error.message)
             })
 
     }
@@ -150,7 +154,9 @@ const Login = () => {
                                     </div>
                                     <a href="#!">Forgot password?</a>
                                 </div>
-
+                                {
+                                    logInError && <p className='text-red-500'>{logInError}</p>
+                                }
                                 <div className="text-center lg:text-left">
                                     <button
                                         onClick={() => handleLogin()}
