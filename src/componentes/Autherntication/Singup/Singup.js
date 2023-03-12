@@ -1,4 +1,5 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
@@ -8,7 +9,9 @@ const Singup = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserInfo } = useContext(AuthContext);
+
+    const [singUpError, setSingUpError] = useState('')
 
     const handleSingUp = () => {
 
@@ -17,13 +20,27 @@ const Singup = () => {
         const password = passwordRef.current.value;
 
         console.log(name, email, password);
+        setSingUpError("");
         createUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user)
+
+                toast('User Created Successfully.')
+
+                const userInfo = {
+                    displayName: name
+                }
+
+                updateUserInfo(userInfo)
+                    .then(() => {
+                        console.warn('user updated')
+                     })
+                    .catch(err => console.log(err.message));
             })
             .catch(error => {
                 console.log(error)
+                setSingUpError(error.message)
             })
 
     }
@@ -151,6 +168,9 @@ const Singup = () => {
                                     </label>
                                 </div>
 
+                                {
+                                    singUpError && <p className='text-red-600'>{singUpError}</p>
+                                }
 
                                 <div className="text-center lg:text-left">
                                     <button

@@ -7,6 +7,8 @@ import Login from './componentes/Autherntication/Login/Login';
 import Singup from './componentes/Autherntication/Singup/Singup';
 import Main from './Layout/Main';
 import Products from './componentes/Products/Products';
+import Dashboard from './componentes/Dashboard/Dashboard';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 
@@ -37,7 +39,11 @@ function App() {
         {
           path: "products",
           element: <Products />
-        }
+        },
+        {
+          path: "dashboard",
+          element: <Dashboard />
+        },
       ]
     }
   ])
@@ -45,6 +51,7 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router={router}></RouterProvider>
+      <Toaster />
       <Footer />
     </div>
   );

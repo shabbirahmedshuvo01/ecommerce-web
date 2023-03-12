@@ -4,7 +4,15 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 
 const Navbar = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => {
+                console.log(err)
+            })
+    }
 
     return (
         <div>
@@ -15,10 +23,12 @@ const Navbar = () => {
                 <div className="flex-none">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to='products'>Products</Link></li>
-                        <li><Link to='singup'>sing up</Link></li>
+                        {/* <li><Link to='dashboard'>Dashboard</Link></li> */}
                         {
-                            user?.uid ?
-                                <li><Link to='login'>Log Out</Link></li>
+                            user?.uid ? <>
+                                <li><Link to='dashboard'>Dashboard</Link></li>
+                                <li><button onClick={handleLogOut}>Log Out</button></li>
+                            </>
                                 :
                                 <li><Link to='login'>Log In</Link></li>
                         }
