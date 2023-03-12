@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Review = () => {
 
@@ -25,7 +26,7 @@ const Review = () => {
                     </div>
                 </div>)
             }
-
+            <Link className='btn btn-link' to="/login">seee</Link>
         </div>
     );
 };

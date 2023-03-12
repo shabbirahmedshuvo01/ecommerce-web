@@ -5,31 +5,45 @@ import Footer from './componentes/Footer/Footer';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Login from './componentes/Autherntication/Login/Login';
 import Singup from './componentes/Autherntication/Singup/Singup';
+import Main from './Layout/Main';
+import Products from './componentes/Products/Products';
 
 function App() {
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home/>
-    },
+      element: <Main />,
+      children: [
+        {
+          path: "/",
+          element: <Home />
+        },
 
-    {
-      path: "login",
-      element: <Login />
-    },
+        {
+          path: "/home",
+          element: <Home />
+        },
 
-    {
-      path: "singup",
-      element: <Singup />
+        {
+          path: "login",
+          element: <Login />
+        },
+
+        {
+          path: "singup",
+          element: <Singup />
+        },
+        {
+          path: "products",
+          element: <Products />
+        }
+      ]
     }
-
-
   ])
 
   return (
     <div className="App">
-      <Navbar />
       <RouterProvider router={router}></RouterProvider>
       <Footer />
     </div>
