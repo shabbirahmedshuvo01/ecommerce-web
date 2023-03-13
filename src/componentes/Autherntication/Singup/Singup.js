@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from 'react';
 import { toast } from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Singup = () => {
@@ -8,6 +8,11 @@ const Singup = () => {
     const nameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || "/";
+
 
     const { createUser, updateUserInfo } = useContext(AuthContext);
 
@@ -25,8 +30,9 @@ const Singup = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-
+                
                 toast('User Created Successfully.')
+                navigate(from, { replace: true });
 
                 const userInfo = {
                     displayName: name
@@ -35,7 +41,7 @@ const Singup = () => {
                 updateUserInfo(userInfo)
                     .then(() => {
                         console.warn('user updated')
-                     })
+                    })
                     .catch(err => console.log(err.message));
             })
             .catch(error => {

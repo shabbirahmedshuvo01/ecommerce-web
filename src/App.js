@@ -9,6 +9,7 @@ import Main from './Layout/Main';
 import Products from './componentes/Products/Products';
 import Dashboard from './componentes/Dashboard/Dashboard';
 import { Toaster } from 'react-hot-toast';
+import PrivateRoute from './componentes/PrivateRoute/PrivateRoute';
 
 function App() {
 
@@ -42,7 +43,7 @@ function App() {
         },
         {
           path: "dashboard",
-          element: <Dashboard />
+          element: <PrivateRoute><Dashboard /></PrivateRoute>
         },
       ]
     }
